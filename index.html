@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shelf — Privacy &amp; Account</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafb; color: #1a2b3c; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { background: #0064FF; padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+    header h1 { color: #fff; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+    header p { color: rgba(255,255,255,0.85); margin-top: 0.25rem; font-size: 0.95rem; }
+    .lang-bar {
+      display: flex; justify-content: center; gap: 0.5rem;
+      padding: 0.75rem 1rem; background: #0050cc;
+    }
+    .lang-bar button {
+      background: rgba(255,255,255,0.15); color: #fff; border: none;
+      padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.85rem;
+      font-weight: 600; cursor: pointer; transition: background 0.15s;
+    }
+    .lang-bar button:hover { background: rgba(255,255,255,0.3); }
+    .lang-bar button.active { background: #fff; color: #0064FF; }
+    nav {
+      display: flex; justify-content: center; gap: 1rem; padding: 1.25rem 1rem;
+      background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10;
+    }
+    nav a {
+      color: #0064FF; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      padding: 0.4rem 1rem; border-radius: 6px; transition: background 0.15s;
+    }
+    nav a:hover { background: #e6efff; }
+    main { max-width: 680px; margin: 2.5rem auto; padding: 0 1.5rem; }
+    section { margin-bottom: 3rem; }
+    h2 { font-size: 1.35rem; font-weight: 700; color: #0f1d2e; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #0064FF; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: #1a2b3c; margin: 1.5rem 0 0.5rem; }
+    p, li { font-size: 0.95rem; color: #3a4a5c; }
+    p + p { margin-top: 0.75rem; }
+    ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    li { margin-bottom: 0.35rem; }
+    .steps { list-style: none; padding: 0; counter-reset: step; }
+    .steps li {
+      counter-increment: step; padding: 0.75rem 1rem 0.75rem 3rem;
+      position: relative; background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 8px; margin-bottom: 0.5rem;
+    }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 1rem; top: 0.75rem;
+      width: 1.5rem; height: 1.5rem; background: #0064FF; color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .warning {
+      background: #fef3c7; border-left: 4px solid #f59e0b;
+      padding: 1rem 1.25rem; border-radius: 0 8px 8px 0;
+      margin: 1rem 0; font-size: 0.9rem; color: #92400e;
+    }
+    .note {
+      background: #e6efff; border-left: 4px solid #0064FF;
+      padding: 1rem 1.25rem; border-radius: 0 8px 8px 0;
+      margin: 1rem 0; font-size: 0.9rem; color: #0f1d2e;
+    }
+    footer {
+      text-align: center; padding: 2rem 1rem; color: #94a3b8;
+      font-size: 0.8rem; border-top: 1px solid #e2e8f0; max-width: 680px; margin: 0 auto;
+    }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.4rem; }
+      main { padding: 0 1rem; margin: 1.5rem auto; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Shelf</h1>
+  <p>B2B Vitrin</p>
+</header>
+
+<div class="lang-bar">
+  <button class="active" onclick="switchLang('tr')">Türkçe</button>
+  <button onclick="switchLang('en')">English</button>
+  <button onclick="switchLang('de')">Deutsch</button>
+  <button onclick="switchLang('fr')">Français</button>
+</div>
+
+<!-- TÜRKÇE -->
+<div id="lang-tr" class="lang-content active">
+  <nav><a href="#privacy-tr">Gizlilik Politikası</a><a href="#delete-tr">Hesap Silme</a></nav>
+  <main>
+    <section id="privacy-tr">
+      <h2>Gizlilik Politikası</h2>
+      <p><strong>Son güncelleme:</strong> Ekim 2026</p>
+      <p>Shelf ("Uygulama"), AVIYIVA BILISIM ELEKTRONIK MAGAZACILIK SANAYI VE TICARET LIMITED SIRKETI ("biz", "bizim") tarafından sunulmaktadır. Bu politika, uygulamayı kullanırken hangi verilerinizin toplandığını, nasıl kullanıldığını ve korunduğunu açıklar.</p>
+      <h3>Toplanan Veriler</h3>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> Ad/kullanıcı adı, e-posta adresi (e-posta, Google veya Apple ile oturum açma yoluyla)</li>
+        <li><strong>Firma bilgileri:</strong> Firma adı, adres(ler), iletişim bilgileri, logo</li>
+        <li><strong>Ürün verileri:</strong> Vitrine eklediğiniz ürünlerin adı, fotoğrafları, açıklaması ve fiyatı</li>
+        <li><strong>Bağlantı verileri:</strong> Hangi firmalarla bağlantı kurduğunuz ve vitrinlerinize hangi firmaları üye yaptığınız</li>
+        <li><strong>Abonelik durumu:</strong> Pro aboneliğinizin durumu (RevenueCat üzerinden, ödeme bilgileriniz bize ulaşmaz — ödeme doğrudan Apple/Google tarafından işlenir)</li>
+      </ul>
+      <h3>Bilgilerin Kullanımı</h3>
+      <p>Toplanan veriler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+      <ul>
+        <li>Hesap oluşturma ve oturum açma</li>
+        <li>Vitrininizde paylaştığınız ürünlerin ilgili/bağlı firmalara gösterilmesi</li>
+        <li>Ülke/şehir bilgisine göre doğru firmalarla eşleştirme yapılması</li>
+        <li>Pro abonelik durumunun doğrulanması</li>
+        <li>Hizmet kalitesinin iyileştirilmesi</li>
+      </ul>
+      <h3>Bilgilerin Paylaşımı</h3>
+      <p>Verileriniz, yasal zorunluluklar dışında üçüncü taraflarla satılmaz veya paylaşılmaz. Yalnızca kendi onayınızla bir vitrine eklediğiniz ürünler, o vitrine erişimi olan (bağlı/eşleşen) firmalarca görülebilir. Veriler yalnızca hizmet sağlayıcılarımız (Supabase, RevenueCat) aracılığıyla işlenir.</p>
+      <h3>Veri Güvenliği</h3>
+      <p>Tüm veriler aktarım sırasında HTTPS/TLS ile şifrelenir. Veritabanı erişimi, satır bazlı güvenlik kurallarıyla (Row Level Security) sadece yetkili kullanıcılarla sınırlandırılır.</p>
+      <h3>Veri Saklama ve Silme</h3>
+      <p>Verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı sildiğinizde, eğer firma sahibiyseniz firmanıza ait tüm veriler (ürünler, vitrinler, ekip üyelikleri) kalıcı olarak silinir; çalışan olarak hesabınızı silerseniz sadece kendi girişiniz silinir, firma verileri etkilenmez.</p>
+      <h3>İletişim</h3>
+      <p>Gizlilik ile ilgili sorularınız için: <strong>info@aviyiva.com</strong></p>
+    </section>
+    <section id="delete-tr">
+      <h2>Hesap Silme</h2>
+      <p>Shelf hesabınızı ve ilişkili verilerinizi doğrudan uygulama içinden silebilirsiniz.</p>
+      <h3>Hesabınızı silmek için</h3>
+      <ol class="steps">
+        <li>Shelf uygulamasını açın ve oturum açın</li>
+        <li>Ayarlar sekmesine gidin</li>
+        <li>"Hesabı Sil" seçeneğine dokunun</li>
+        <li>Ne silineceğini onaylayın ve kimlik doğrulamanızı yapın (şifre veya sosyal giriş onayı)</li>
+        <li>Silme işlemini onaylayın</li>
+      </ol>
+      <div class="note"><strong>Not:</strong> Firma sahibiyseniz hesabınızı silmek, firmanıza ait TÜM verileri (ürünler, vitrinler, ekip üyelikleri, firma bağlantıları) kalıcı olarak siler — diğer ekip üyelerinin giriş bilgileri silinmez, sadece firmadan çıkarılırlar. Çalışan olarak hesabınızı silerseniz sadece kendi hesabınız silinir.</div>
+      <div class="warning"><strong>Dikkat:</strong> Hesap silme işlemi geri alınamaz.</div>
+      <h3>Silinen veriler</h3>
+      <ul>
+        <li>Hesap/giriş bilgileriniz</li>
+        <li>Firma sahibiyseniz: firmaya ait tüm ürün, vitrin, adres, iletişim ve bağlantı verileri</li>
+        <li>Ürün fotoğrafları</li>
+      </ul>
+      <p>Uygulamaya erişiminiz yoksa hesap silme talebinizi <strong>info@aviyiva.com</strong> adresine e-posta göndererek de iletebilirsiniz.</p>
+    </section>
+  </main>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-content">
+  <nav><a href="#privacy-en">Privacy Policy</a><a href="#delete-en">Delete Account</a></nav>
+  <main>
+    <section id="privacy-en">
+      <h2>Privacy Policy</h2>
+      <p><strong>Last updated:</strong> October 2026</p>
+      <p>Shelf ("App") is provided by AVIYIVA BILISIM ELEKTRONIK MAGAZACILIK SANAYI VE TICARET LIMITED SIRKETI ("we", "our"). This policy explains what data is collected when you use the app, how it is used, and how it is protected.</p>
+      <h3>Data Collected</h3>
+      <ul>
+        <li><strong>Account information:</strong> Name/username, email address (via email, Google, or Apple Sign-In)</li>
+        <li><strong>Company information:</strong> Company name, address(es), contact information, logo</li>
+        <li><strong>Product data:</strong> Name, photos, description and price of products you add to your showcase</li>
+        <li><strong>Connection data:</strong> Which companies you connect with and which companies you make members of your showcases</li>
+        <li><strong>Subscription status:</strong> Your Pro subscription status (via RevenueCat — your payment details never reach us; payments are processed directly by Apple/Google)</li>
+      </ul>
+      <h3>Use of Data</h3>
+      <p>Collected data is used solely for the following purposes:</p>
+      <ul>
+        <li>Account creation and sign-in</li>
+        <li>Showing products you share in your showcase to relevant/connected companies</li>
+        <li>Matching you with the right companies based on country/city</li>
+        <li>Verifying Pro subscription status</li>
+        <li>Improving service quality</li>
+      </ul>
+      <h3>Data Sharing</h3>
+      <p>Your data is not sold or shared with third parties except where legally required. Only products you have explicitly added to a showcase are visible to companies with access (connected/matched) to that showcase. Data is processed only through our service providers (Supabase, RevenueCat).</p>
+      <h3>Data Security</h3>
+      <p>All data is encrypted in transit using HTTPS/TLS. Database access is restricted to authorized users via Row Level Security rules.</p>
+      <h3>Data Retention and Deletion</h3>
+      <p>Your data is retained as long as your account is active. When you delete your account: if you are a company owner, all data belonging to your company (products, showcases, team memberships) is permanently deleted; if you delete your account as an employee, only your own login is deleted and company data is unaffected.</p>
+      <h3>Contact</h3>
+      <p>For privacy-related inquiries: <strong>info@aviyiva.com</strong></p>
+    </section>
+    <section id="delete-en">
+      <h2>Delete Account</h2>
+      <p>You can delete your Shelf account and associated data directly from within the app.</p>
+      <h3>To delete your account</h3>
+      <ol class="steps">
+        <li>Open the Shelf app and sign in</li>
+        <li>Go to the Settings tab</li>
+        <li>Tap "Delete Account"</li>
+        <li>Review what will be deleted and verify your identity (password or social sign-in confirmation)</li>
+        <li>Confirm the deletion</li>
+      </ol>
+      <div class="note"><strong>Note:</strong> If you are a company owner, deleting your account permanently deletes ALL of your company's data (products, showcases, team memberships, company connections) — team members' own logins are not deleted, they are just removed from the company. If you delete your account as an employee, only your own account is deleted.</div>
+      <div class="warning"><strong>Warning:</strong> Account deletion is irreversible.</div>
+      <h3>Data that will be deleted</h3>
+      <ul>
+        <li>Your account/login information</li>
+        <li>If you are a company owner: all of your company's products, showcases, addresses, contacts, and connections</li>
+        <li>Product photos</li>
+      </ul>
+      <p>If you no longer have access to the app, you can also request account deletion by emailing <strong>info@aviyiva.com</strong>.</p>
+    </section>
+  </main>
+</div>
+
+<!-- DEUTSCH -->
+<div id="lang-de" class="lang-content">
+  <nav><a href="#privacy-de">Datenschutzrichtlinie</a><a href="#delete-de">Konto löschen</a></nav>
+  <main>
+    <section id="privacy-de">
+      <h2>Datenschutzrichtlinie</h2>
+      <p><strong>Letzte Aktualisierung:</strong> Oktober 2026</p>
+      <p>Shelf („App") wird von AVIYIVA BILISIM ELEKTRONIK MAGAZACILIK SANAYI VE TICARET LIMITED SIRKETI („wir", „unser") bereitgestellt. Diese Richtlinie erläutert, welche Daten bei der Nutzung der App erhoben werden, wie sie verwendet und geschützt werden.</p>
+      <h3>Erhobene Daten</h3>
+      <ul>
+        <li><strong>Kontoinformationen:</strong> Name/Benutzername, E-Mail-Adresse (per E-Mail, Google- oder Apple-Anmeldung)</li>
+        <li><strong>Firmeninformationen:</strong> Firmenname, Adresse(n), Kontaktinformationen, Logo</li>
+        <li><strong>Produktdaten:</strong> Name, Fotos, Beschreibung und Preis der von Ihnen zur Vitrine hinzugefügten Produkte</li>
+        <li><strong>Verbindungsdaten:</strong> Mit welchen Firmen Sie sich verbinden und welche Firmen Sie zu Mitgliedern Ihrer Vitrinen machen</li>
+        <li><strong>Abonnementstatus:</strong> Ihr Pro-Abonnementstatus (über RevenueCat — Ihre Zahlungsdaten erreichen uns nie, Zahlungen werden direkt von Apple/Google verarbeitet)</li>
+      </ul>
+      <h3>Verwendung der Daten</h3>
+      <p>Die erhobenen Daten werden ausschließlich für folgende Zwecke verwendet:</p>
+      <ul>
+        <li>Kontoerstellung und Anmeldung</li>
+        <li>Anzeige von Produkten, die Sie in Ihrer Vitrine freigeben, für relevante/verbundene Firmen</li>
+        <li>Zuordnung zu den richtigen Firmen anhand von Land/Stadt</li>
+        <li>Überprüfung des Pro-Abonnementstatus</li>
+        <li>Verbesserung der Servicequalität</li>
+      </ul>
+      <h3>Datenweitergabe</h3>
+      <p>Ihre Daten werden außer bei gesetzlicher Verpflichtung nicht verkauft oder an Dritte weitergegeben. Nur Produkte, die Sie ausdrücklich zu einer Vitrine hinzugefügt haben, sind für Firmen mit Zugriff (verbunden/zugeordnet) auf diese Vitrine sichtbar. Daten werden ausschließlich über unsere Dienstanbieter (Supabase, RevenueCat) verarbeitet.</p>
+      <h3>Datensicherheit</h3>
+      <p>Alle Daten werden bei der Übertragung mit HTTPS/TLS verschlüsselt. Der Datenbankzugriff ist durch Row-Level-Security-Regeln auf autorisierte Benutzer beschränkt.</p>
+      <h3>Datenspeicherung und -löschung</h3>
+      <p>Ihre Daten werden gespeichert, solange Ihr Konto aktiv ist. Wenn Sie Ihr Konto löschen: Als Firmeninhaber werden alle Daten Ihrer Firma (Produkte, Vitrinen, Teammitgliedschaften) dauerhaft gelöscht; als Mitarbeiter wird nur Ihr eigener Zugang gelöscht, Firmendaten bleiben unberührt.</p>
+      <h3>Kontakt</h3>
+      <p>Für datenschutzbezogene Anfragen: <strong>info@aviyiva.com</strong></p>
+    </section>
+    <section id="delete-de">
+      <h2>Konto löschen</h2>
+      <p>Sie können Ihr Shelf-Konto und die zugehörigen Daten direkt in der App löschen.</p>
+      <h3>So löschen Sie Ihr Konto</h3>
+      <ol class="steps">
+        <li>Öffnen Sie die Shelf-App und melden Sie sich an</li>
+        <li>Gehen Sie zum Einstellungen-Tab</li>
+        <li>Tippen Sie auf „Konto löschen"</li>
+        <li>Prüfen Sie, was gelöscht wird, und bestätigen Sie Ihre Identität (Passwort oder soziale Anmeldebestätigung)</li>
+        <li>Bestätigen Sie die Löschung</li>
+      </ol>
+      <div class="note"><strong>Hinweis:</strong> Als Firmeninhaber löscht das Löschen Ihres Kontos ALLE Daten Ihrer Firma (Produkte, Vitrinen, Teammitgliedschaften, Firmenverbindungen) dauerhaft — die Logins der Teammitglieder werden nicht gelöscht, sie werden nur aus der Firma entfernt. Als Mitarbeiter wird nur Ihr eigenes Konto gelöscht.</div>
+      <div class="warning"><strong>Achtung:</strong> Die Kontolöschung ist unwiderruflich.</div>
+      <h3>Gelöschte Daten</h3>
+      <ul>
+        <li>Ihre Konto-/Anmeldeinformationen</li>
+        <li>Als Firmeninhaber: alle Produkte, Vitrinen, Adressen, Kontakte und Verbindungen Ihrer Firma</li>
+        <li>Produktfotos</li>
+      </ul>
+      <p>Falls Sie keinen Zugriff mehr auf die App haben, können Sie die Kontolöschung auch per E-Mail an <strong>info@aviyiva.com</strong> beantragen.</p>
+    </section>
+  </main>
+</div>
+
+<!-- FRANÇAIS -->
+<div id="lang-fr" class="lang-content">
+  <nav><a href="#privacy-fr">Politique de confidentialité</a><a href="#delete-fr">Supprimer le compte</a></nav>
+  <main>
+    <section id="privacy-fr">
+      <h2>Politique de confidentialité</h2>
+      <p><strong>Dernière mise à jour :</strong> Octobre 2026</p>
+      <p>Shelf (« Application ») est fournie par AVIYIVA BILISIM ELEKTRONIK MAGAZACILIK SANAYI VE TICARET LIMITED SIRKETI (« nous », « notre »). Cette politique explique quelles données sont collectées lors de l'utilisation de l'application, comment elles sont utilisées et protégées.</p>
+      <h3>Données collectées</h3>
+      <ul>
+        <li><strong>Informations de compte :</strong> Nom/nom d'utilisateur, adresse e-mail (via e-mail, connexion Google ou Apple)</li>
+        <li><strong>Informations sur l'entreprise :</strong> Nom de l'entreprise, adresse(s), coordonnées, logo</li>
+        <li><strong>Données produit :</strong> Nom, photos, description et prix des produits que vous ajoutez à votre vitrine</li>
+        <li><strong>Données de connexion :</strong> Les entreprises auxquelles vous vous connectez et celles que vous rendez membres de vos vitrines</li>
+        <li><strong>Statut d'abonnement :</strong> Votre statut d'abonnement Pro (via RevenueCat — vos informations de paiement ne nous parviennent jamais ; les paiements sont traités directement par Apple/Google)</li>
+      </ul>
+      <h3>Utilisation des données</h3>
+      <p>Les données collectées sont utilisées uniquement aux fins suivantes :</p>
+      <ul>
+        <li>Création de compte et connexion</li>
+        <li>Affichage des produits que vous partagez dans votre vitrine aux entreprises concernées/connectées</li>
+        <li>Mise en relation avec les bonnes entreprises selon le pays/la ville</li>
+        <li>Vérification du statut d'abonnement Pro</li>
+        <li>Amélioration de la qualité du service</li>
+      </ul>
+      <h3>Partage des données</h3>
+      <p>Vos données ne sont ni vendues ni partagées avec des tiers, sauf obligation légale. Seuls les produits que vous avez explicitement ajoutés à une vitrine sont visibles par les entreprises ayant accès (connectées/associées) à cette vitrine. Les données sont traitées uniquement par nos prestataires de services (Supabase, RevenueCat).</p>
+      <h3>Sécurité des données</h3>
+      <p>Toutes les données sont chiffrées en transit via HTTPS/TLS. L'accès à la base de données est limité aux utilisateurs autorisés grâce à des règles de sécurité au niveau des lignes (Row Level Security).</p>
+      <h3>Conservation et suppression des données</h3>
+      <p>Vos données sont conservées tant que votre compte est actif. Lorsque vous supprimez votre compte : si vous êtes propriétaire d'entreprise, toutes les données de votre entreprise (produits, vitrines, appartenances à l'équipe) sont définitivement supprimées ; si vous supprimez votre compte en tant qu'employé, seul votre propre accès est supprimé, les données de l'entreprise ne sont pas affectées.</p>
+      <h3>Contact</h3>
+      <p>Pour les questions relatives à la confidentialité : <strong>info@aviyiva.com</strong></p>
+    </section>
+    <section id="delete-fr">
+      <h2>Supprimer le compte</h2>
+      <p>Vous pouvez supprimer votre compte Shelf et les données associées directement depuis l'application.</p>
+      <h3>Pour supprimer votre compte</h3>
+      <ol class="steps">
+        <li>Ouvrez l'application Shelf et connectez-vous</li>
+        <li>Accédez à l'onglet Paramètres</li>
+        <li>Appuyez sur « Supprimer le compte »</li>
+        <li>Vérifiez ce qui sera supprimé et confirmez votre identité (mot de passe ou confirmation de connexion sociale)</li>
+        <li>Confirmez la suppression</li>
+      </ol>
+      <div class="note"><strong>Remarque :</strong> Si vous êtes propriétaire d'entreprise, la suppression de votre compte supprime définitivement TOUTES les données de votre entreprise (produits, vitrines, appartenances à l'équipe, connexions d'entreprise) — les identifiants des membres de l'équipe ne sont pas supprimés, ils sont seulement retirés de l'entreprise. Si vous supprimez votre compte en tant qu'employé, seul votre propre compte est supprimé.</div>
+      <div class="warning"><strong>Attention :</strong> La suppression du compte est irréversible.</div>
+      <h3>Données supprimées</h3>
+      <ul>
+        <li>Vos informations de compte/connexion</li>
+        <li>Si vous êtes propriétaire d'entreprise : tous les produits, vitrines, adresses, contacts et connexions de votre entreprise</li>
+        <li>Photos de produits</li>
+      </ul>
+      <p>Si vous n'avez plus accès à l'application, vous pouvez également demander la suppression de votre compte par e-mail à <strong>info@aviyiva.com</strong>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>&copy; 2026 AVIYIVA — Shelf. All rights reserved.</footer>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.lang-bar button').forEach(function(btn) { btn.classList.remove('active'); });
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.querySelector('.lang-bar button[onclick*="' + lang + '"]').classList.add('active');
+  document.documentElement.lang = lang;
+  window.scrollTo(0, 0);
+}
+(function() {
+  var browserLang = (navigator.language || '').slice(0, 2);
+  var supported = ['tr', 'en', 'de', 'fr'];
+  if (supported.indexOf(browserLang) !== -1) switchLang(browserLang);
+})();
+</script>
+
+</body>
+</html>
